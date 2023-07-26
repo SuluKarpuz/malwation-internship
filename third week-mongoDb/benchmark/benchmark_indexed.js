@@ -16,13 +16,13 @@ async function benchmarkCollection() {
 
     const query = { rating: 8 };
 
-    startTime = new Date();
+    startTime = performance.now();
 
     for (let i = 0; i < 1000; i++) {
       await collection.find(query).toArray();
     }
 
-    endTime = new Date();
+    endTime = performance.now();
   } catch (err) {
     console.error("Error occurred:", err);
   } finally {
