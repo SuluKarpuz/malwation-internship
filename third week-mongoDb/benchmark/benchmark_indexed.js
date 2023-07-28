@@ -14,7 +14,7 @@ async function benchmarkCollection() {
     const db = client.db();
     const collection = db.collection("indexed");
 
-    const query = { rating: 8 };
+    const query = { rating: { $in: [6, 8] } };
 
     startTime = performance.now();
 
