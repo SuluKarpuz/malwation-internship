@@ -53,9 +53,9 @@
 
 - [Redis Official Documentation](https://redis.io/docs/about/)
 - [RabbitMQ Official Getting Started](https://www.rabbitmq.com/getstarted.html)
-- [Redis Use Cases](https://redis.io/topics/use-cases)
-- [RabbitMQ Use Cases](https://www.rabbitmq.com/usecases.html)
-- [Redis Use Cases on AWS](https://aws.amazon.com/redis/use-cases/)
-- [RabbitMQ Patterns and Use Cases](https://www.rabbitmq.com/patterns.html)
+- [Redis Use Cases](https://redis.com/blog/5-industry-use-cases-for-redis-developers/)
+- [RabbitMQ Use Cases](https://www.cloudamqp.com/blog/rabbitmq-use-cases-explaining-message-queues-and-when-to-use-them.html)
+- [Redis Use Cases on AWS](https://aws.amazon.com/elasticache/redis/)
+- [RabbitMQ Patterns and Use Cases](https://memphis.dev/blog/rabbitmq-use-cases-and-best-practices/)
 
 [^1]: [Redis Data Types](https://redis.io/topics/data-types)
