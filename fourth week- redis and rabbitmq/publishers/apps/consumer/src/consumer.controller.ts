@@ -16,13 +16,7 @@ export class ConsumerController {
   async getNotifications(@Payload() data: any, @Ctx() context: RmqContext) {
     console.log(`Pattern: ${context.getPattern()}`);
 
-    const dummyData = await this.userModel.create({
-      customId: data.id,
-      data: 'dummy_data',
-    });
-    console.log('Dummy data successfully created:', dummyData);
-
-    await new Promise((resolve) => setTimeout(resolve, 15000));
+    await new Promise((resolve) => setTimeout(resolve, 60000));
 
     const newData = await this.userModel.findOneAndUpdate(
       { customId: data.id },

@@ -21,6 +21,12 @@ export class AppService {
     const id = uuidv4();
     //buradaki user data kısmı urlde de alınabilir
     const user_data = 'user_data';
+    const dummyData = await this.userModel.create({
+      customId: id,
+      data: 'dummy_data',
+    });
+    console.log('Dummy data successfully created:', dummyData);
+
     await this.client.emit('ID_CREATED', { id, user_data });
     return id;
   }
