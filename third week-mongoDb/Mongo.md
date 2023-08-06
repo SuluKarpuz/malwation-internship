@@ -1,4 +1,3 @@
-Sure! Here's the revised version that you can easily copy-paste into a GitHub README:
 
 ## Aggregation
 
