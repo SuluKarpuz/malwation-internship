@@ -1,0 +1,29 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type MessageType {
+  id: String!
+  user: String!
+  text: String!
+}
+
+type BookType {
+  id: String!
+  count: Int!
+}
+
+type Query {
+  getBook: BookType!
+}
+
+type Mutation {
+  postMessage(user: String!, text: String!): String!
+  incrementStock: BookType!
+  decrementStock: BookType!
+}
+
+type Subscription {
+  messagesSubscription: [MessageType!]!
+  stockUpdate: BookType!
+}

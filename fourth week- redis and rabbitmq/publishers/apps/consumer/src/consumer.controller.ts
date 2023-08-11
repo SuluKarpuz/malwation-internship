@@ -28,4 +28,8 @@ export class ConsumerController {
     await this.redis.set(newData.customId, JSON.stringify(newData));
     console.log('user data successfully created:');
   }
+  @EventPattern('ID_CREATED')
+  a(@Payload() data: any, @Ctx() context: RmqContext) {
+    console.log('deneme aynı anda oluyorlar mı acaba');
+  }
 }
