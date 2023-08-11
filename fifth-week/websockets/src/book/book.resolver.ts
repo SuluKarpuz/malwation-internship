@@ -1,14 +1,15 @@
-import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
+import { Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
 import { Inject } from '@nestjs/common';
 import { BookType } from './book.entity';
+import { v4 as uuidv4 } from 'uuid';
 
 @Resolver(() => BookType)
 export class BookResolver {
   constructor(@Inject('PUB_SUB') private pubSub: PubSub) {}
 
   private book: BookType = {
-    id: 'unique-id',
+    id: uuidv4(),
     count: 0,
   };
 
