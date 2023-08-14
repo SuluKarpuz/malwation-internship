@@ -13,7 +13,7 @@ export class ChatResolver {
   constructor(@Inject(PUB_SUB) private readonly pubSub: RedisPubSub) {}
   private messagesArray: MessageType[] = [];
 
-  @Mutation(() => String) // Updated return type
+  @Mutation(() => String)
   postMessage(@Args('user') user: string, @Args('text') text: string): string {
     console.log('mutation working');
     const newMessage: MessageType = {
@@ -26,11 +26,11 @@ export class ChatResolver {
     this.pubSub.publish(subscriptionEvents.messages, {
       messages: this.messagesArray,
     });
-    return newMessage.id; // Return the ID of the new message
+    return newMessage.id;
   }
 
   @Subscription(() => [MessageType], {
-    resolve: (payload) => payload.messages, // Return the messages array from the payload
+    resolve: (payload) => payload.messages, // here we return the messages array from the payload
   })
   messagesSubscription() {
     console.log('subscription working');

@@ -1,0 +1,8 @@
+FROM node:18-alpine 
+
+RUN mkdir gateway
+COPY package.json ./package.json
+COPY gateway.ts ./gateway.ts
+RUN npm i
+
+CMD ["npm","run","start"]
