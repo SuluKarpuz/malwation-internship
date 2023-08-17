@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphql-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graphql-gateway
+  template:
+    metadata:
+      labels:
+        app: graphql-gateway
+    spec:
+      containers:
+        - name: graphql-gateway
+          image: sulukarpuz/gateway:v1.0
+          ports:
+            - containerPort: 4000
