@@ -6,7 +6,8 @@ spec:
   selector:
     app: graphql-gateway
   ports:
-    - name: http
+    - name: web
+      protocol: TCP
       port: 4000
       targetPort: 4000
   type: ClusterIP

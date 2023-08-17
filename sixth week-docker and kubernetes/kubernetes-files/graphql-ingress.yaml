@@ -4,10 +4,12 @@ metadata:
   name: ingress
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
     - match: PathPrefix("/gateway")
       kind: Rule
       services:
         - name: graphql-gateway
           port: 4000
+  tls:
+    certResolver: default
